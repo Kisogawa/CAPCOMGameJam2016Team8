@@ -28,4 +28,10 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+<<<<<<< HEAD
 SS/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+=======
+SS/Library/ShaderCache/
+*.log
+>>>>>>> d03721ed68fe0c620a55cac500b166ffbeeb46e7
+SS/Temp/UnityLockfile
