@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 	Text text;
 	bool isTimeOver;
-
+	public GameObject resultcanvas;
 	public float limitTime;
 
 
@@ -21,8 +21,12 @@ public class Timer : MonoBehaviour {
 		limitTime -= Time.deltaTime;
 		text.text = "残り"+limitTime.ToString("N1");
 		if(limitTime <= 0){
-			isTimeOver = true;
+			Timeover();
 			text.text = " ";
 		}
 	}
+	void Timeover(){
+		resultcanvas.SetActive (true);
+	}
+
 }
