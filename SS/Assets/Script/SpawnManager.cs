@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour
 
 	public float daiouIkaProb;
 	public float takoProb;
+	public Transform delpoint;
 
 	void Update()
 	{
@@ -58,7 +59,8 @@ public class SpawnManager : MonoBehaviour
 		}
 
 
-		var prefab = Instantiate (spawnCharacter, spawnPoint.position, spawnPoint.rotation) as GameObject;
+		var prefab = Instantiate (spawnCharacter, spawnPoint.position, spawnCharacter.transform.rotation) as GameObject;
 		prefab.transform.SetParent (transform);
+		prefab.GetComponent<EnemyMove> ().delpoint = delpoint.position;
 	}
 }
