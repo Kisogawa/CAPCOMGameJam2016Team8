@@ -5,23 +5,24 @@ using UnityEngine;
 public class BeltConveyorManager : MonoBehaviour {
 
 	public GameObject Conveyor;
-	public float Timer;
-    public float Interval;
-    public Transform SpawnPosition;
+	public float Lengh;                 //ベルトコンベアの長さ
+	public float Speed;					//ベルトコンベアの速さ
 
-    void Update () {
-		Timer += Time.deltaTime;
-
-		if (Timer > Interval)
+	private void Start()
+	{
+		//一気にスポーンする
+		for (int i = 0; i < Lengh * 3.7; i++)
 		{
-            Spown();
-            Timer = 0;
-        }
-
+			Spown(i*60);
+		}
 	}
 
-    void Spown()
-    {
-        var prefab = Instantiate(Conveyor, SpawnPosition.position, SpawnPosition.rotation) as GameObject;
-    }
+	void Spown(int Count)
+	{
+		var prefab = Instantiate(Conveyor, transform.localPosition, transform.rotation) as GameObject;
+		prefab.GetComponent<Conveyor>().Count = Count;
+		prefab.GetComponent<Conveyor>().Lengh = Lengh;
+		prefab.GetComponent<Conveyor>().Speed = Speed;
+
+	}
 }

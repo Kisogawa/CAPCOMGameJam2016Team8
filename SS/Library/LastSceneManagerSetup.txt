@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/SandBoxnakagaki.unity
-=======
-- path: Assets/Scenes/New Scene.unity
->>>>>>> d15cb1284b4f82301b0ca745aa0a43eac33181f8
+- path: Assets/Scenes/BeltConveyor.unity
   isLoaded: 1
   isActive: 1
