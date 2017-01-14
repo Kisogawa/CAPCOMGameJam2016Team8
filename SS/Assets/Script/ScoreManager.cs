@@ -18,6 +18,6 @@ public class ScoreManager : MonoBehaviour
 
     void Update ()
     {
-		text.text = score.ToString();
+		text.text = score.ToString()+"円";
     }
 }

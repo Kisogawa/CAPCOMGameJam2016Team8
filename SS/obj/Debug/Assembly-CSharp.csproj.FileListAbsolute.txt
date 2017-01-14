@@ -17,6 +17,7 @@ C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\U
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\Unity.CecilTools.dll
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\Mono.Cecil.Pdb.dll
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEngine.xml
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEditor.xml
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEngine.UI.xml
@@ -27,4 +28,3 @@ C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\U
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\obj\Debug\Assembly-CSharp.dll
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\obj\Debug\Assembly-CSharp.pdb
-C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb

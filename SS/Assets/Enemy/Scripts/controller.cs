@@ -28,7 +28,7 @@ public class controller : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && lockon) {
 			ScoreManager.score += Getscore;
 			if (Istako) {
-				
+				sumi.Issumi = true;
 			} else {
 				
 			}
@@ -37,6 +37,7 @@ public class controller : MonoBehaviour {
 		RockonImage.enabled = this.lockon;
 	}
 	void OnMouseOver(){
+		if(!sumi.Issumi)
 		this.lockon = true;
 	}
 }

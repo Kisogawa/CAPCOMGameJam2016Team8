@@ -24,6 +24,6 @@ C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\U
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\Temp\bin\Debug\UnityEngine.VR.xml
-C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\gotsu\OneDrive\ドキュメント\CAPCOMGameJam2016\SS\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache

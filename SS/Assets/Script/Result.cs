@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class Result : MonoBehaviour {
 	public Text resultScore;
+	public Text playerName;
 	public float countUpSpeed;
 
 
 	void Start()
 	{
-		ScoreManager.score = 1000;
 		DisplayScore();
 	}
 
@@ -22,11 +22,11 @@ public class Result : MonoBehaviour {
 
 	void UpdateScoreDisplay(int newScore)
 	{
-		resultScore.text = newScore.ToString();
+		resultScore.text = newScore.ToString()+"円";
 	}
 
 	public void OnClick()
 	{ 
-		SceneManager.LoadScene ("Test", LoadSceneMode.Additive);
+		SceneManager.LoadScene ("Main");
 	}
 }
