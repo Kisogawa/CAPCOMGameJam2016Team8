@@ -36,7 +36,7 @@ public class controller : MonoBehaviour {
 				
 			}
 			GetComponent<Shooting> ().Shoot ();
-			Invoke ("Explosion", 0.5f);
+			Invoke ("Explosion", 0.3f);
 			Destroy (gameObject,0.5f);
 		}
 		RockonImage.enabled = this.lockon;
@@ -47,7 +47,7 @@ public class controller : MonoBehaviour {
 	}
 
 	void Explosion(){
-		Instantiate (surume, transform.position, Quaternion.identity);
-		Instantiate (explosion, transform.position, Quaternion.identity);
+		Instantiate (surume, transform.position + new Vector3(0,0,-7), Quaternion.identity);
+		Instantiate (explosion, transform.position + new Vector3(0,3,-3), Quaternion.identity);
 	}
 }
