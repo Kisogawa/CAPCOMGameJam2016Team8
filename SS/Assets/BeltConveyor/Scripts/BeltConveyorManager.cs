@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeltConveyorManager : MonoBehaviour {
 
 	public GameObject Conveyor;
-	public float Lengh;                 //ベルトコンベアの長さ
+	public float Lengh;                 //ベルトコンベアの長さ(左側が右移動で正)
 	public float Speed;                 //ベルトコンベアの速さ
 	public Vector3 Size;				//コンベアの大きさ
 
@@ -38,6 +38,7 @@ public class BeltConveyorManager : MonoBehaviour {
 		prefab.GetComponent<Conveyor>().Lengh = Lengh;
 		prefab.GetComponent<Conveyor>().Speed = Speed;
 		prefab.GetComponent<Conveyor>().Size = Size;
+		prefab.transform.parent = transform;
 
 	}
 }

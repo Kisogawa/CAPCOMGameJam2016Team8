@@ -16,6 +16,19 @@ public class Conveyor : MonoBehaviour
 	{
 		SpownPos = transform.localPosition;
 		transform.localScale = Size;
+		//メッシュのY方向の大きさを取得する
+		float sizeY = transform.localScale.y * 8;
+		//全体の長さを計算する
+		float totalLen = Lengh * 2 + sizeY * Mathf.PI;
+		//移動速度(符号無し)
+		float SpeedAbs = Mathf.Abs(Speed);
+		//一週回るのにかかる時間の計算
+		int totalCount = (int)((totalLen) / SpeedAbs);
+		//カウンタがマイナスの場合は+方向に手転換させる
+		while (Count < 0)
+		{
+			Count += totalCount;
+		}
 	}
 
 	void Update()
@@ -27,14 +40,17 @@ public class Conveyor : MonoBehaviour
 		//全体の長さを計算する
 		float totalLen = Lengh * 2 + sizeY * Mathf.PI;
 
+		//移動速度(符号無し)
+		float SpeedAbs = Mathf.Abs(Speed);
+
 		//一週回るのにかかる時間の計算
-		int totalCount = (int)((totalLen) / Speed);
+		int totalCount = (int)((totalLen) / SpeedAbs);
 
 		Count = (Count + 1) % totalCount;
 		//Count++;
 
 		//最初の直線ラインの時
-		if (Count < Lengh / Speed)
+		if (Count < Lengh / SpeedAbs)
 		{
 			//左方向に移動
 			transform.rotation = Quaternion.Euler(90, 90, -90);
@@ -42,25 +58,25 @@ public class Conveyor : MonoBehaviour
 			pos.x -= Speed * Count;
 			transform.localPosition = pos;
 		}
-		else if (Count < (Lengh + (sizeY * Mathf.PI) / 2) / Speed)
+		else if (Count < (Lengh + (sizeY * Mathf.PI) / 2) / SpeedAbs)
 		{
 			//左側の回るとこ
 			float omega = Speed / sizeY*2;//角速度の計算
-			transform.Rotate(new Vector3(0, -omega * 180 / Mathf.PI, 0));//度に変換し加算する
+			transform.Rotate(new Vector3(0, omega * 180 / Mathf.PI, 0));//度に変換し加算する
 		}
-		else if (Count < (Lengh*2 + (sizeY * Mathf.PI) / 2) / Speed)
+		else if (Count < (Lengh*2 + (sizeY * Mathf.PI) / 2) / SpeedAbs)
 		{
 			transform.rotation = Quaternion.Euler(270, 0, 0);
 			//右方向に移動
 			Vector3 pos = SpownPos;
-			pos.x -= Speed * ((Lengh * 2 + (sizeY * Mathf.PI) / 2) / Speed - Count);
+			pos.x -= Speed * ((Lengh * 2 + (sizeY * Mathf.PI) / 2) / SpeedAbs - Count);
 			transform.localPosition = pos;
 		}
 		else
 		{
 			//右側の回るとこ
 			float omega = Speed / sizeY*2;//角速度の計算
-			transform.Rotate(new Vector3(0, -omega * 180 / Mathf.PI, 0));//度に変換し加算する
+			transform.Rotate(new Vector3(0, omega * 180 / Mathf.PI, 0));//度に変換し加算する
 		}
 	}
 
