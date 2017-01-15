@@ -7,6 +7,7 @@ public class Conveyor : MonoBehaviour
 
 	public float Speed;         //ベルトコンベアの速さ(上側が左移動で正)
 	public float Lengh;         //ベルトコンベアの長さ
+	public Vector3 Size;		//コンベアの大きさ
 
 	public int Count;			//カウンタ
 	public Vector3 SpownPos;	//スポーン位置
@@ -14,6 +15,7 @@ public class Conveyor : MonoBehaviour
 	private void Start()
 	{
 		SpownPos = transform.localPosition;
+		transform.localScale = Size;
 	}
 
 	void Update()
