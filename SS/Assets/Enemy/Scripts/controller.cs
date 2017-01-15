@@ -31,6 +31,7 @@ public class controller : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && lockon) {
 			ScoreManager.score += Getscore;
 			lockon = false;
+			GameObject.FindWithTag ("MainCamera").GetComponent<ObjectShaker> ().Shake ();
 			GetComponent<Shooting> ().Shoot ();
 			if (Istako) {
 				Debug.Log ("takoやで！");
