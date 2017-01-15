@@ -30,20 +30,26 @@ public class controller : MonoBehaviour {
         }
 		if (Input.GetMouseButtonDown(0) && lockon) {
 			ScoreManager.score += Getscore;
-			if (Istako) {
-				sumi.Issumi = true;
-			} else {
-				
-			}
+			lockon = false;
 			GetComponent<Shooting> ().Shoot ();
-			Invoke ("Explosion", 0.3f);
+			if (Istako) {
+				Debug.Log ("takoやで！");
+				sumi.Issumi = true;
+
+			} else {
+				Invoke ("Explosion", 0.3f);
+			}
+
+
 			Destroy (gameObject,0.5f);
 		}
 		RockonImage.enabled = this.lockon;
 	}
 	void OnMouseOver(){
-		if(!sumi.Issumi)
-		this.lockon = true;
+		if (!sumi.Issumi) {
+			GetComponent<AudioSource> ().Play();
+			this.lockon = true;
+		}
 	}
 
 	void Explosion(){

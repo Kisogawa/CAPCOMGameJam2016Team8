@@ -4,30 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class sumi : MonoBehaviour {
-
+	public AudioSource sumiSound;
+	public AudioClip sound;
 	public static bool Issumi;
 	public Canvas sumicanvas;
 	public float count;
 	public GameObject[] images;
+	bool Isplaysound;
+	bool isdel;
+	bool issize;
 
 	// Use this for initialization
 	void Start () {
-		Issumi = false;
+		Issumi = isdel = false;
+		Isplaysound = false;
+		issize = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log (Issumi);
 		sumicanvas.enabled = Issumi;
 		if (Issumi) {
+			Playsound ();
 			DisplaySumi ();
-			Invoke ("Delsumi", count);
+			oncedelsumi ();
 		}
 	}
 
 	void DisplaySumi(){
-		for (int i = 0; i < images.Length; i++) {
-			Debug.Log ("p");
-			iTween.ScaleTo (images [i], iTween.Hash ("x", 1, "y", 1, "time", 0.5f));
+		if (!issize) {
+			for (int i = 0; i < images.Length; i++) {
+				iTween.ScaleTo (images [i], iTween.Hash ("x", 1, "y", 1, "time", 0.3f));
+			}
+			issize = true;
 		}
 	}
 
@@ -36,5 +46,22 @@ public class sumi : MonoBehaviour {
 			images [i].transform.localScale = new Vector3 (0, 0, 1);
 		}
 		Issumi = false;
+		isdel = false;
+		Isplaysound = false;
+		issize = false;
+	}
+	void Playsound(){
+		if (!Isplaysound) {
+			Debug.Log ("a");
+			Isplaysound = true;
+			SeManager.Instance.Play ("magic-poison1");
+		}
+	}
+
+	void oncedelsumi (){
+		if (!isdel) {
+			isdel = true;
+			Invoke ("Delsumi", count);
+		}
 	}
 }
