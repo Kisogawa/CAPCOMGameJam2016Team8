@@ -9,6 +9,9 @@ public class controller : MonoBehaviour {
 	public Canvas RockonImage;
 	public bool Istako;
 
+	public GameObject explosion;
+	public GameObject surume;
+
 	// Use this for initialization
 	void Start () {
         lockon = false;
@@ -32,12 +35,19 @@ public class controller : MonoBehaviour {
 			} else {
 				
 			}
-			Destroy (gameObject);
+			GetComponent<Shooting> ().Shoot ();
+			Invoke ("Explosion", 0.5f);
+			Destroy (gameObject,0.5f);
 		}
 		RockonImage.enabled = this.lockon;
 	}
 	void OnMouseOver(){
 		if(!sumi.Issumi)
 		this.lockon = true;
+	}
+
+	void Explosion(){
+		Instantiate (surume, transform.position, Quaternion.identity);
+		Instantiate (explosion, transform.position, Quaternion.identity);
 	}
 }
